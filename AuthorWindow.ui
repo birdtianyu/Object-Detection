@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AuthorWindow</class>
+ <widget class="QMainWindow" name="AuthorWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>407</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1057</width>
+    <height>826</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>开发者信息</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Detection Software
+Version 1.07
+Last modified 2018.5.17
+CopyRight(C) 2018
+Hongkun Xu
+GitHub:https://github.com/birdtianyu
+Email:birdtianyu@gmail.com </string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+      <property name="margin">
+       <number>5</number>
+      </property>
+      <property name="indent">
+       <number>5</number>
+      </property>
+      <property name="openExternalLinks">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../myicon.png</pixmap>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="C:/Users/徐宏坤/Desktop/food.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ShowImagesWindow.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_ShowImagesWin(object):
+    def setupUi(self, ShowImagesWin):
+        ShowImagesWin.setObjectName("ShowImagesWin")
+        ShowImagesWin.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(ShowImagesWin)
+        self.centralwidget.setObjectName("centralwidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 365, 543))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.listView = QtWidgets.QListView(self.scrollAreaWidgetContents)
+        self.listView.setObjectName("listView")
+        self.verticalLayout_4.addWidget(self.listView)
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.horizontalLayout.addWidget(self.scrollArea)
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setObjectName("groupBox")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.groupBox)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox)
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.groupBox_2)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label = QtWidgets.QLabel(self.groupBox_2)
+        self.label.setObjectName("label")
+        self.verticalLayout_2.addWidget(self.label)
+        self.verticalLayout.addWidget(self.groupBox_2)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.pushButton_1 = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_1.setObjectName("pushButton_1")
+        self.horizontalLayout_2.addWidget(self.pushButton_1)
+        self.pushButton_3 = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.horizontalLayout_2.addWidget(self.pushButton_3)
+        self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.horizontalLayout_2.addWidget(self.pushButton_2)
+        self.horizontalLayout_2.setStretch(0, 1)
+        self.horizontalLayout_2.setStretch(1, 1)
+        self.horizontalLayout_2.setStretch(2, 1)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.groupBox_3 = QtWidgets.QGroupBox(self.groupBox)
+        self.groupBox_3.setObjectName("groupBox_3")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.groupBox_3)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.label_2 = QtWidgets.QLabel(self.groupBox_3)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_3.addWidget(self.label_2)
+        self.verticalLayout.addWidget(self.groupBox_3)
+        self.verticalLayout.setStretch(0, 4)
+        self.verticalLayout.setStretch(1, 1)
+        self.verticalLayout.setStretch(2, 4)
+        self.horizontalLayout.addWidget(self.groupBox)
+        ShowImagesWin.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(ShowImagesWin)
+        self.statusbar.setObjectName("statusbar")
+        ShowImagesWin.setStatusBar(self.statusbar)
+
+        self.retranslateUi(ShowImagesWin)
+        QtCore.QMetaObject.connectSlotsByName(ShowImagesWin)
+
+    def retranslateUi(self, ShowImagesWin):
+        _translate = QtCore.QCoreApplication.translate
+        ShowImagesWin.setWindowTitle(_translate("ShowImagesWin", "ShowImages"))
+        self.groupBox.setTitle(_translate("ShowImagesWin", "处理区域"))
+        self.groupBox_2.setTitle(_translate("ShowImagesWin", "原始图像"))
+        self.label.setText(_translate("ShowImagesWin", "TextLabel"))
+        self.pushButton_1.setText(_translate("ShowImagesWin", "打开"))
+        self.pushButton_3.setText(_translate("ShowImagesWin", "保存裁剪结果"))
+        self.pushButton_2.setText(_translate("ShowImagesWin", "删除原始图像"))
+        self.groupBox_3.setTitle(_translate("ShowImagesWin", "裁剪后图像"))
+        self.label_2.setText(_translate("ShowImagesWin", "TextLabel"))
+

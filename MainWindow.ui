@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>基于安检机图像的违禁品检测</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>UI/MyIcon.png</normaloff>UI/MyIcon.png</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,1,4">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>原始图像</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="ImgLabel1">
+         <property name="text">
+          <string>原始</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_openImg">
+         <property name="text">
+          <string>打开图片</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_openVideo">
+         <property name="text">
+          <string>打开视频</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_openCamera">
+         <property name="text">
+          <string>打开摄像头</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_Start1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>开始检测1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_Start2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>开始检测2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_videoResult">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>开始检测视频流1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_Start3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>开始检测视频流2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <property name="editable">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>最终输出结果</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>图像裁剪</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>边缘处理</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>灰度化</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>噪声处理</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>第一层卷积层结果</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>第一层池化层结果</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>第二层卷积层结果</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>第二层池化层结果</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLineEdit" name="lineEdit1">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_to">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>to</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit2">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="MyprogressBar">
+         <property name="value">
+          <number>24</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>输出结果</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="ImgLabel2">
+         <property name="text">
+          <string>结果</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <widget class="QMenu" name="menu_6">
+     <property name="title">
+      <string>打开</string>
+     </property>
+     <addaction name="actionOpenTarget"/>
+     <addaction name="actionOpenVideo"/>
+     <addaction name="actionOpenCamera"/>
+     <addaction name="actionOpenDataImgs"/>
+     <addaction name="actionOpenProject"/>
+    </widget>
+    <addaction name="menu_6"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionClose"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>数据集</string>
+    </property>
+    <addaction name="actionBaiduImage"/>
+    <addaction name="actionOpenImg"/>
+    <addaction name="separator"/>
+    <addaction name="actionTFRecord"/>
+    <addaction name="actionOpenData"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>训练</string>
+    </property>
+    <addaction name="actionTensorboard"/>
+    <addaction name="actionjupyter_Notebook"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>视图</string>
+    </property>
+    <addaction name="actionview1"/>
+    <addaction name="actionview2"/>
+    <addaction name="actionview3"/>
+   </widget>
+   <widget class="QMenu" name="menu_System">
+    <property name="title">
+     <string>系统</string>
+    </property>
+    <widget class="QMenu" name="menu_Language">
+     <property name="title">
+      <string>语言</string>
+     </property>
+     <addaction name="actionEn"/>
+     <addaction name="actionCh"/>
+     <addaction name="actionJa"/>
+    </widget>
+    <widget class="QMenu" name="menu_Help">
+     <property name="title">
+      <string>帮助</string>
+     </property>
+     <addaction name="actionDoc"/>
+    </widget>
+    <addaction name="menu_Language"/>
+    <addaction name="menu_Help"/>
+    <addaction name="separator"/>
+    <addaction name="actionAuthor"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="actionImageEditor"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_System"/>
+  </widget>
+  <action name="actionSave">
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </action>
+  <action name="actionTensorboard">
+   <property name="text">
+    <string>Tensorboard</string>
+   </property>
+  </action>
+  <action name="actionBaiduImage">
+   <property name="text">
+    <string>下载百度图片数据集</string>
+   </property>
+  </action>
+  <action name="actionOpenData">
+   <property name="text">
+    <string>数据集目录</string>
+   </property>
+   <property name="toolTip">
+    <string>打开训练集目录</string>
+   </property>
+  </action>
+  <action name="actionTFRecord">
+   <property name="text">
+    <string>图片预处理与数据集制作</string>
+   </property>
+  </action>
+  <action name="actionsaa">
+   <property name="text">
+    <string>saa</string>
+   </property>
+  </action>
+  <action name="actionas_2">
+   <property name="text">
+    <string>编辑训练集</string>
+   </property>
+  </action>
+  <action name="actionImageEditor">
+   <property name="text">
+    <string>编辑图像</string>
+   </property>
+  </action>
+  <action name="actionsda">
+   <property name="text">
+    <string>sda</string>
+   </property>
+  </action>
+  <action name="actions">
+   <property name="text">
+    <string>s</string>
+   </property>
+  </action>
+  <action name="actiondsa">
+   <property name="text">
+    <string>dsa</string>
+   </property>
+  </action>
+  <action name="actionasdas">
+   <property name="text">
+    <string>asdas</string>
+   </property>
+  </action>
+  <action name="actiondas">
+   <property name="text">
+    <string>das</string>
+   </property>
+  </action>
+  <action name="actionasd">
+   <property name="text">
+    <string>asd</string>
+   </property>
+  </action>
+  <action name="actionads">
+   <property name="text">
+    <string>ads</string>
+   </property>
+  </action>
+  <action name="actionjupyter_Notebook">
+   <property name="text">
+    <string>jupyter Notebook</string>
+   </property>
+  </action>
+  <action name="actionDocument">
+   <property name="text">
+    <string>wendang</string>
+   </property>
+  </action>
+  <action name="actionview1">
+   <property name="text">
+    <string>view1</string>
+   </property>
+  </action>
+  <action name="actionview2">
+   <property name="text">
+    <string>view2</string>
+   </property>
+  </action>
+  <action name="actionview3">
+   <property name="text">
+    <string>view3</string>
+   </property>
+  </action>
+  <action name="action1">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="action2">
+   <property name="text">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="action2_2">
+   <property name="text">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="action3">
+   <property name="text">
+    <string>3</string>
+   </property>
+  </action>
+  <action name="actionAskd">
+   <property name="text">
+    <string>askd</string>
+   </property>
+  </action>
+  <action name="actionEn">
+   <property name="text">
+    <string>英语</string>
+   </property>
+  </action>
+  <action name="actionCh">
+   <property name="text">
+    <string>中文</string>
+   </property>
+  </action>
+  <action name="actionJa">
+   <property name="text">
+    <string>日语</string>
+   </property>
+  </action>
+  <action name="actionAuthor">
+   <property name="text">
+    <string>联系开发者</string>
+   </property>
+  </action>
+  <action name="actionDoc">
+   <property name="text">
+    <string>文档</string>
+   </property>
+  </action>
+  <action name="actionBanben">
+   <property name="text">
+    <string>版本信息</string>
+   </property>
+  </action>
+  <action name="actionOpenImg">
+   <property name="text">
+    <string>下载到的图片目录</string>
+   </property>
+  </action>
+  <action name="actionOpenTarget">
+   <property name="text">
+    <string>目标图片</string>
+   </property>
+  </action>
+  <action name="actionOpenDataImgs">
+   <property name="text">
+    <string>图片数据集</string>
+   </property>
+  </action>
+  <action name="actionOpenProject">
+   <property name="text">
+    <string>项目文件夹</string>
+   </property>
+  </action>
+  <action name="actionOpenVideo">
+   <property name="text">
+    <string>目标视频</string>
+   </property>
+  </action>
+  <action name="actionOpenCamera">
+   <property name="text">
+    <string>摄像头</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
